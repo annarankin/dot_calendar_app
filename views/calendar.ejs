@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOT: Bike Safety</title>
+  <link rel="stylesheet" href="/bower_components/semantic/dist/semantic.css">
+  <link rel="stylesheet" href="/bower_components/semantic/dist/components/modal.css">
+  <link rel="stylesheet" href="/bower_components/fullcalendar/dist/fullcalendar.css">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/moment/moment.js"></script>
+  <script src="/bower_components/fullcalendar/dist/fullcalendar.js"></script>
+  <script src="/bower_components/semantic/dist/semantic.js"></script>
+  <script src="/bower_components/semantic/dist/components/modal.js"></script>
+  <script src="/main.js"></script>
+
+</head>
+<body>
+  <div class="ui segment inverted green center aligned">
+    <h1><a href="/">NYC Department of Transportation</a></h1>
+  </div>
+  <div class="ui container">
+    <div class="ui centered grid">
+      <div class="eleven wide column">
+        <div class="ui raised segment">
+          
+          <div id="calendar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- This is the event display modal! -->
+  <div class="ui modal">
+    <i class="close icon"></i>
+    <div class="header" id="event-title">
+      Event Details
+    </div>
+    <div class="image content">
+      <div class="ui medium image">
+        <img src="/img/citibikes.jpg">
+      </div>
+      <div class="description">
+        <h2 class="ui header">Date: <span id="event-date"></span> <br>RSVPS: <span id="event-rsvps"></span></h2>
+        <p id="event-description"></p>
+      </div>
+    </div>
+    <div class="ui segment">
+      
+      <div class="ui relaxed divided list">
+        <h4 class="ui header">Comments:</h4>
+        <script id="comment-template" type="x-template">
+        <div class="item">
+          <div class="content">
+            <p class="header">Name</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo voluptatem accusamus magni facere expedita dicta aut temporibus sequi, quod sint, iste reprehenderit odit, assumenda consequuntur distinctio saepe inventore tempore architecto!</p>
+          </div>
+        </div>
+        </script>
+
+      </div>
+      <div class="segment">
+        <form class="ui form" id="add-comment">
+          <input id="_id" type="hidden" name="_id">
+          <h4 class="ui header green">Add a comment!</h4>
+          <div class="three fields">
+            <input type="text" placeholder="Name" name="name">
+            <input type="text" placeholder="Comment" name="comment">
+            <button class="ui positive button" id="comment-submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="actions">
+      <form id="add-rsvp" class="ui form">
+        <input id="_id" type="hidden" name="_id">
+        <div class="three fields">
+          <input type="text" placeholder="Name" name="name">
+          <input type="email" placeholder="you@email.com" name="email">
+          <button id="rsvp-btn" class="ui positive right labeled icon button">
+            RSVP
+            <i class="checkmark icon"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>  
